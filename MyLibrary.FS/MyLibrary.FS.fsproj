@@ -11,6 +11,8 @@
     <AssemblyName>MyLibrary.FS</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>MyLibrary.snk</AssemblyOriginatorKeyFile>
     <Name>MyLibrary.FS</Name>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -63,6 +65,7 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="SolutionInfo.fs" />
     <Compile Include="Library1.fs" />
+    <None Include="MyLibrary.snk" />
     <None Include="Script.fsx" />
     <Content Include="FodyWeavers.xml" />
     <Content Include="packages.config" />
@@ -77,6 +80,9 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <Import Project="..\packages\Fody.1.26.2\build\Fody.targets" Condition="Exists('..\packages\Fody.1.26.2\build\Fody.targets')" />
+  <!--<Target Name="CopyKeyFile" BeforeTargets="BeforeCompile">
+    <Copy DestinationFolder="$(IntermediateDir)" SourceFiles="$(ProjectDir)..\MyLibrary\MyLibrary.snk" />
+  </Target>-->
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

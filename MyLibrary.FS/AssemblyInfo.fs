@@ -3,5 +3,5 @@ open System.Reflection
 
 [<assembly: AssemblyTitle("MyLibrary.FS")>]
 [<assembly: AssemblyDescription("MyLibrary FS version")>]
-[<assembly: AssemblyKeyFileAttribute(@"..\MyLibrary\MyLibrary.snk")>]
+[<assembly: AssemblyKeyFileAttribute(@"MyLibrary.snk")>]
 do ()
